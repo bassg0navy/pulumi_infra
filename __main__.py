@@ -24,6 +24,6 @@ bucket = pulumi_oci.objectstorage.Bucket('pulumi-resource-import-bucket',
     versioning='Enabled'
 )
 
-# Export the bucket name and URL
+
 pulumi.export('bucket_name', bucket.name)
 pulumi.export('bucket_namespace', bucket.namespace)
