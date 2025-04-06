@@ -25,5 +25,14 @@ bucket = pulumi_oci.objectstorage.Bucket('pulumi-resource-import-bucket',
 )
 
 # Export the bucket name and URL
+# Imported test_pulumi_gh_pr_create bucket
+test_pulumi_gh_pr_create = pulumi_oci.objectstorage.Bucket('test_pulumi_gh_pr_create',
+    compartment_id='ocid1.tenancy.oc1..aaaaaaaadkxkk76ljinkchc3gmtgohryrbegiiaakcyrnhgyuy6a7iutlmtq',
+    name='test_pulumi_gh_pr_create',
+    namespace='id9ypxcsj7cu',
+    storage_tier='Standard',
+    versioning='Enabled'
+)
+
 pulumi.export('bucket_name', bucket.name)
 pulumi.export('bucket_namespace', bucket.namespace)
