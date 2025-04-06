@@ -34,5 +34,14 @@ test_pulumi_gh_pr_create = pulumi_oci.objectstorage.Bucket('test_pulumi_gh_pr_cr
     versioning='Enabled'
 )
 
+# Imported test_pulumi bucket
+test_pulumi = pulumi_oci.objectstorage.Bucket('test_pulumi',
+    compartment_id='ocid1.tenancy.oc1..aaaaaaaadkxkk76ljinkchc3gmtgohryrbegiiaakcyrnhgyuy6a7iutlmtq',
+    name='test_pulumi',
+    namespace='id9ypxcsj7cu',
+    storage_tier='Standard',
+    versioning='Enabled'
+)
+
 pulumi.export('bucket_name', bucket.name)
 pulumi.export('bucket_namespace', bucket.namespace)
